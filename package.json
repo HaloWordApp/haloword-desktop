@@ -1,11 +1,24 @@
 {
-  "name": "Halo Word",
+  "name": "HaloWord",
+  "productName": "Halo Word",
+  "description": "Halo Word Desktop",
   "version": "0.1.0",
   "main": "main.js",
   "build": {
-    "appId": "halo-word"
+    "appId": "halo-word",
+    "protocols": {
+      "name": "Halo Word URL Scheme",
+      "schemes": [
+        "haloword"
+      ]
+    }
   },
   "devDependencies": {
-    "electron": "^1.4.2"
+    "appdmg-tf": "^0.4.9",
+    "electron": "^1.4.2",
+    "electron-builder": "^7.10.2"
+  },
+  "author": {
+    "name": "Zeyi Fan"
   }
 }

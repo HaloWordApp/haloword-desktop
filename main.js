@@ -1,4 +1,5 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, dialog} = require('electron');
+const url = require('url');
 
 let win = null;
 
@@ -98,4 +99,24 @@ app.on('activate', () => {
   if (win === null) {
     createWindow();
   }
+});
+
+function lookupWord(word) {
+  if (win === null) {
+    createWindow();
+  }
+
+  win.webContents.executeJavaScript(`window.location.hash = "#${word}"`);
+}
+
+app.setAsDefaultProtocolClient('haloword')
+
+app.on('open-url', (event, u) => {
+  const parsed = url.parse(u, true);
+
+  if (parsed.query["word"] !== undefined) {
+    lookupWord(parsed.query["word"])
+  }
+
+  event.preventDefault();
 });
