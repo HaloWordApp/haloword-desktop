@@ -1,0 +1,11 @@
+{
+  "name": "Halo Word",
+  "version": "0.1.0",
+  "main": "main.js",
+  "build": {
+    "appId": "halo-word"
+  },
+  "devDependencies": {
+    "electron": "^1.4.2"
+  }
+}

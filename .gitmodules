@@ -1,0 +1,3 @@
+[submodule "haloword"]
+	path = haloword
+	url = git@github.com:HaloWordApp/haloword.git
