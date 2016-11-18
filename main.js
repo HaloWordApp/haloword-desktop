@@ -2,6 +2,7 @@ const {app, BrowserWindow, Menu, dialog} = require('electron');
 const url = require('url');
 
 let win = null;
+let word = "";
 
 function createWindow () {
   win = new BrowserWindow({
@@ -11,7 +12,9 @@ function createWindow () {
     minHeight: 450
   });
 
-  win.loadURL(`file://${__dirname}/haloword/main.html`);
+  win.loadURL(`file://${__dirname}/haloword/main.html#${word}`);
+
+  word = "";
 
   win.on('closed', () => {
     win = null
@@ -82,6 +85,18 @@ function createWindow () {
     // need investigate other platform
     // TODO: window, help, services menu on macOS
     menuTemplate.shift()
+  } else {
+    menuTemplate.push({
+      role: 'window',
+      submenu: [
+        {
+          role: 'minimize'
+        },
+        {
+          role: 'close'
+        }
+      ]
+    });
   }
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
@@ -101,12 +116,12 @@ app.on('activate', () => {
   }
 });
 
-function lookupWord(word) {
+function lookupWord(w) {
   if (win === null) {
-    createWindow();
+    word = w;
+  } else {
+    win.webContents.executeJavaScript(`window.location.hash = "#${w}"`);
   }
-
-  win.webContents.executeJavaScript(`window.location.hash = "#${word}"`);
 }
 
 app.setAsDefaultProtocolClient('haloword')
