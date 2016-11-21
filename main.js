@@ -3,8 +3,11 @@ const url = require('url');
 
 let win = null;
 let word = "";
+let isReady = false;
 
 function createWindow () {
+  isReady = true;
+
   win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -119,6 +122,11 @@ app.on('activate', () => {
 function lookupWord(w) {
   if (win === null) {
     word = w;
+
+    if (isReady) {
+      createWindow();
+    }
+
   } else {
     win.webContents.executeJavaScript(`window.location.hash = "#${w}"`);
   }
