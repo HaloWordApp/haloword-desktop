@@ -2,7 +2,9 @@
   "name": "HaloWord",
   "productName": "Halo Word",
   "description": "Halo Word Desktop",
+  "homepage": "https://github.com/HaloWordApp/haloword-desktop",
   "version": "0.1.0",
+  "license": "MIT",
   "main": "main.js",
   "build": {
     "appId": "halo-word",
@@ -19,6 +21,12 @@
     "electron-builder": "^7.26.0"
   },
   "author": {
-    "name": "Zeyi Fan"
+    "name": "Halo Word App",
+    "url": "https://github.com/HaloWordApp"
+  },
+  "contributors": {
+      "name": "Zeyi Fan",
+      "email": "fanzeyi1994@gmail.com",
+      "url": "https://zr.is/"
   }
 }
