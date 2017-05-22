@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>haloword://lookup?word={popclip text}</string>
+			<key>Image File</key>
+			<string>haloword.png</string>
+			<key>Title</key>
+			<string>Halo Word</string>
+			<key>Regular Expression</key>
+			<string>\w+</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search a word using Halo Word.</string>
+	<key>Extension Identifier</key>
+	<string>is.zr.popclip.haloword</string>
+	<key>Extension Name</key>
+	<string>Halo Word</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
