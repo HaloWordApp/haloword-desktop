@@ -15,18 +15,24 @@
       ]
     }
   },
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:HaloWordApp/haloword-desktop.git"
+  },
+  "electronVersion": "1.6.2",
   "devDependencies": {
     "appdmg-tf": "^0.4.9",
-    "electron": "^1.4.2",
+    "electron": "^1.6.2",
     "electron-builder": "^7.26.0"
   },
   "author": {
     "name": "Halo Word App",
-    "url": "https://github.com/HaloWordApp"
+    "url": "https://github.com/HaloWordApp",
+    "email": "fanzeyi1994+halo@gmail.com"
   },
   "contributors": {
-      "name": "Zeyi Fan",
-      "email": "fanzeyi1994@gmail.com",
-      "url": "https://zr.is/"
+    "name": "Zeyi Fan",
+    "email": "fanzeyi1994@gmail.com",
+    "url": "https://zr.is/"
   }
 }
